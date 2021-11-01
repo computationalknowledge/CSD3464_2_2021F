@@ -52,8 +52,17 @@ class Manager {
 		player1 = aList.remove(ArrayIndexController++);
 		player2 = aList.remove(ArrayIndexController);
 		
-		if (player1.getStrength() > player2.getStrength()) {}
-		
+		if (player1.getStrength() > player2.getStrength()) {
+			
+			System.out.print("Player 1 is the winner with a strength of ");
+			String s=Integer.toString(player1.getStrength());
+			System.out.println(s);
+		}
+		else {
+			System.out.print("Player 2 is the winner with a strength of ");
+			String s=Integer.toString(player2.getStrength());
+			System.out.println(s);		
+		}
 	}
 
 }
