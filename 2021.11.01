@@ -23,6 +23,13 @@ class Manager{
 			aList.add(new Player());
 		}
 	}
+
+	public void DoCompetition() {
+		// demarshall 2 players from aList
+		// if then to see who is stronger
+		
+	}
+
 }
 
 
