@@ -1,0 +1,26 @@
+// business domain:
+// Write a Java program to create x players
+// use Random Number generators to assign them strengths.
+// Do competition and announce the Winner:
+import java.util.Random;
+
+public class ReadyPlayer1 {
+
+	public static void main(String [] args){
+		// this is the starting point
+	}
+}
+
+class Player{
+	Random rand;
+
+	private int Strength;
+
+	// constructor: used to initialize the data state of your OBJECT
+	
+	private SetStrength(){
+		rand = new Random();
+		Strength = rand.nextInt(100);
+	}
+
+}
