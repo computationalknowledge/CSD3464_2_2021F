@@ -1,13 +1,13 @@
+
 // design the algorithm to run the business domain:
 // Write a Java program to create 10 players
 // use Random Number generators to assign them strengths.
 // Do competition and announce the Winner:
 import java.util.*;
 
-
 public class ReadyPlayer1 {
 
-	public static void main(String [] args){
+	public static void main(String[] args) {
 		// Note here: I could say:
 		// Manager m = new Manager();
 		// m.Run()
@@ -15,34 +15,61 @@ public class ReadyPlayer1 {
 	}
 }
 
-class Manager{
+class Manager {
+	// al.remove(1);
+	// al.size();
 	// ArrayList<Integer> list=new ArrayList<Integer>();
 	ArrayList<Player> aList = new ArrayList<Player>();
+
 	public void Run() {
 		for (int i = 0; i < 10; i++) {
 			aList.add(new Player());
 		}
+		this.DoCompetition();
 	}
 
-	public void DoCompetition() {
+	private void DoCompetition() {
+		Player player1;
+		Player player2;
 		// demarshall 2 players from aList
 		// if then to see who is stronger
+		
+			/* goal: develop the Architectural Thinking Skill Set to identify 
+			 * the Design Best Practices to structure your Java Application to 
+			 * deliver the requirements of the Business Domain:
+
+			Design Heuristic (Thinking Rule)
+			As the question:
+			The context I am in right now: requires me to:
+			1.	Walk over the ArrayList
+			2.	Pull out 2 players at a time
+			3.	Do the Competition*/
+
+		// how do I control the arrayIndex that I am working with:
+		// the only way I can do this is to make a VARIABLE and control that Variable
+		
+		int ArrayIndexController = 0;
+		player1 = aList.remove(ArrayIndexController++);
+		player2 = aList.remove(ArrayIndexController);
+		
+		if (player1.getStrength() > player2.getStrength()) {}
 		
 	}
 
 }
 
-
-class Player{
+class Player {
 	Random rand;
 
 	private int Strength;
 
+	public int getStrength() {return this.Strength;}
+
 	public Player() {
 		this.SetStrength();
 	}
-	
-	private void SetStrength(){
+
+	private void SetStrength() {
 		rand = new Random();
 		this.Strength = rand.nextInt(100);
 	}
