@@ -1,26 +1,43 @@
-// business domain:
-// Write a Java program to create x players
+// design the algorithm to run the business domain:
+// Write a Java program to create 10 players
 // use Random Number generators to assign them strengths.
 // Do competition and announce the Winner:
-import java.util.Random;
+import java.util.*;
+
 
 public class ReadyPlayer1 {
 
 	public static void main(String [] args){
-		// this is the starting point
+		// Note here: I could say:
+		// Manager m = new Manager();
+		// m.Run()
+		(new Manager()).Run();
 	}
 }
+
+class Manager{
+	// ArrayList<Integer> list=new ArrayList<Integer>();
+	ArrayList<Player> aList = new ArrayList<Player>();
+	public void Run() {
+		for (int i = 0; i < 10; i++) {
+			aList.add(new Player());
+		}
+	}
+}
+
 
 class Player{
 	Random rand;
 
 	private int Strength;
 
-	// constructor: used to initialize the data state of your OBJECT
+	public Player() {
+		this.SetStrength();
+	}
 	
-	private SetStrength(){
+	private void SetStrength(){
 		rand = new Random();
-		Strength = rand.nextInt(100);
+		this.Strength = rand.nextInt(100);
 	}
 
 }
