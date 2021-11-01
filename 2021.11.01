@@ -33,36 +33,38 @@ class Manager {
 		Player player2;
 		// demarshall 2 players from aList
 		// if then to see who is stronger
-		
-			/* goal: develop the Architectural Thinking Skill Set to identify 
-			 * the Design Best Practices to structure your Java Application to 
-			 * deliver the requirements of the Business Domain:
 
-			Design Heuristic (Thinking Rule)
-			As the question:
-			The context I am in right now: requires me to:
-			1.	Walk over the ArrayList
-			2.	Pull out 2 players at a time
-			3.	Do the Competition*/
+		/*
+		 * goal: develop the Architectural Thinking Skill Set to identify the Design
+		 * Best Practices to structure your Java Application to deliver the requirements
+		 * of the Business Domain:
+		 * 
+		 * Design Heuristic (Thinking Rule) As the question: The context I am in right
+		 * now: requires me to: 1. Walk over the ArrayList 2. Pull out 2 players at a
+		 * time 3. Do the Competition
+		 */
 
 		// how do I control the arrayIndex that I am working with:
 		// the only way I can do this is to make a VARIABLE and control that Variable
-		
+
 		int ArrayIndexController = 0;
-		player1 = aList.remove(ArrayIndexController++);
-		player2 = aList.remove(ArrayIndexController);
-		
-		if (player1.getStrength() > player2.getStrength()) {
-			
-			System.out.print("Player 1 is the winner with a strength of ");
-			String s=Integer.toString(player1.getStrength());
-			System.out.println(s);
+		// #todo fix this code so all players can compete:
+		while (aList.size() > 2) {
+
+			player1 = aList.remove(ArrayIndexController);
+			player2 = aList.remove(ArrayIndexController);
+
+			if (player1.getStrength() > player2.getStrength()) {
+				System.out.print("Player 1 is the winner with a strength of ");
+				String s = Integer.toString(player1.getStrength());
+				System.out.println(s);
+			} else {
+				System.out.print("Player 2 is the winner with a strength of ");
+				String s = Integer.toString(player2.getStrength());
+				System.out.println(s);
+			}
 		}
-		else {
-			System.out.print("Player 2 is the winner with a strength of ");
-			String s=Integer.toString(player2.getStrength());
-			System.out.println(s);		
-		}
+
 	}
 
 }
@@ -72,7 +74,9 @@ class Player {
 
 	private int Strength;
 
-	public int getStrength() {return this.Strength;}
+	public int getStrength() {
+		return this.Strength;
+	}
 
 	public Player() {
 		this.SetStrength();
